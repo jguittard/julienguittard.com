@@ -1,21 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Julien Guittard`,
+    author: `Julien Guittard`,
+    job: `Web Application Architect`,
+    headLine: `A personal blog about software development`,
+    description: `Hi! My name is Julien Guittard. I'm a passionate web application architect, PHP evangelist and iOS developer.`,
+    siteUrl: `https://julienguittard.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `julienguittard`,
+      linkedin: `julienguittard`,
+      github: `jguittard`,
+      facebook: `julien.guittard`
     },
+    siteLanguage: 'en', // Language Tag on <html> element
+    logo: '/assets/jg-icon_512x512.png', // Used for SEO
+    ogLanguage: 'en_US', // Facebook Language
   },
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,29 +51,34 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `105850445`,
       },
     },
     `gatsby-plugin-feed`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Julien Guittard`,
+        short_name: `Julien Guittard`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#70b49c`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/jg-icon_512x512.png`,
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        fonts: [
+          `Montserrat\:400,700`
+        ],
+        display: 'swap'
+      }
     },
+    `gatsby-plugin-styled-components`
   ],
 }
